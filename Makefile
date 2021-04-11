@@ -2,7 +2,7 @@ CXX      := -c++
 BUILD    := ./build
 OBJ_DIR  := $(BUILD)/objects
 APP_DIR  := $(BUILD)/executables
-TARGET   := driver
+TARGET   := extractor
 INCLUDE  := -Iinclude/
 SRC      :=                      \
    $(wildcard src/*.cpp)         \
@@ -44,3 +44,9 @@ info:
 	@echo "[*] executable file directory: ${APP_DIR}     "
 	@echo "[*] object directory:      ${OBJ_DIR}     "
 	@echo "[*] source directory:         ${SRC}         "
+
+run1:
+	$(APP_DIR)/$(TARGET) myLargeImage.pgm -t 0 10 5000 5000 -s 640 480 -w invert invseq
+
+run2:
+	$(APP_DIR)/$(TARGET) myLargeImage.pgm -t 0 10 5000 5000 -s 640 480 -w invert invseq -w none sequence2
