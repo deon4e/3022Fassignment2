@@ -21,6 +21,6 @@ int main(int argc, char const *argv[])
     int width = std::stoi(argv[8]);
     int height = std::stoi(argv[9]);
 
-    std::cout << start_x << start_y << end_x << end_y << width, height << std::endl;
+    
     return 0;
 }
