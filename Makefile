@@ -39,14 +39,12 @@ release: all
 clean:
 	-@rm -rvf $(OBJ_DIR)/*
 	-@rm -rvf $(APP_DIR)/*
+	-@rm -rvf ./output
 
 info:
 	@echo "[*] executable file directory: ${APP_DIR}     "
 	@echo "[*] object directory:      ${OBJ_DIR}     "
 	@echo "[*] source directory:         ${SRC}         "
 
-run1:
-	$(APP_DIR)/$(TARGET) myLargeImage.pgm -t 0 10 5000 5000 -s 640 480 -w invert invseq
-
-run2:
-	$(APP_DIR)/$(TARGET) myLargeImage.pgm -t 0 10 5000 5000 -s 640 480 -w invert invseq -w none sequence2
+run:
+	$(APP_DIR)/$(TARGET) ./sloan_image.pgm -t 0 10 50 50 -s 640 640 -w none noneseq -w reverse revseq
